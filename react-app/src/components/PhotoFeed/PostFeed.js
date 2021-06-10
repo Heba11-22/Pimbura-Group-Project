@@ -30,17 +30,18 @@ function PhotoFeed() {
     const handleLike = async (e) => {
         const user_id = userId
         const post_id = postID
+        console.log(user_id, post_id)
         const params = { user_id, post_id }
         dispatch(likeAPost(params))
         
     }
 
-    const handleCommentLike = async (e) => {
+    const handleCommentLike = async (id) => {
         const user_id = userId
-        const comment_id = commentId
+        const comment_id = id
         const params = { user_id, comment_id }
         dispatch(likeAComment(params))
-        // dispatch(getAllPosts())
+        setCommentId(0)
     }
 
     const handleUnlike = async (e) => {
@@ -50,17 +51,15 @@ function PhotoFeed() {
         dispatch(unlikeAPost(params))
     }
 
-    const handleCommentUnlike = async (e) => {
-        const comment_id = Object.values(e.target)[1].value
-        const id = commentLike
-        dispatch(unlikeAcomment(id, comment_id))
-        // dispatch(getAllPosts())
-
+    const handleCommentUnlike = async (id) => {
+        const comment_id = id
+        const like_id = commentLike
+        dispatch(unlikeAcomment(like_id, comment_id))
+        setCommentId(0)
     }
 
     const handleDeleteAComment = async () => {
         dispatch(deleteAComment(commentId))
-        // dispatch(getAllPosts())
     }
 
     const userHasLiked = (post, userId) => {
@@ -98,19 +97,20 @@ function PhotoFeed() {
     }
 
     const userOwnsCommentLike = (comment, userId) => {
+        console.log('user owns comment like triggered')
         if (comment.comment_likes.length) {
             for (let i = 0; i < comment.comment_likes.length; i++) {
                 if (comment.comment_likes[i].user_id === userId) {
                     // liked
-                    return <i key={comment.id} value={comment.id} onMouseOver={() => setCommentLikeId(comment.comment_likes[i].id)} onClick={handleCommentUnlike} className="heart icon"></i>
+                    return <i key={comment.id} value={comment.id} onMouseOver={() => setCommentLikeId(comment.comment_likes[i].id)} onClick={()=> handleCommentUnlike(comment.id)} className="heart icon"></i>
                 } else {
-                    return <i key={comment.id} value={comment.id} onMouseOver={() => setCommentLikeId(comment.comment_likes[i].id)} onClick={handleCommentUnlike} className="heart outline icon"></i> 
+                    return <i key={comment.id} value={comment.id} onMouseOver={() => setCommentLikeId(comment.comment_likes[i].id)} onClick={() => handleCommentLike(comment.id)} className="heart outline icon"></i> 
                 }
             }
         }
         else {
             // not liked
-            return <i key={comment.id} value={comment.id} onMouseOver={() => setCommentId(comment.id)} onClick={handleCommentLike} className="heart outline icon"></i>
+            return <i key={comment.id} value={comment.id} onMouseOver={() => setCommentId(comment.id)} onClick={() => handleCommentLike(comment.id)} className="heart outline icon"></i>
         }
 
     }
