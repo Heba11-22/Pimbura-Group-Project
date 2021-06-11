@@ -18,7 +18,7 @@ const DemoUser = () => {
         <>
             <form onSubmit={demoLoginWrapper}>
                 <div className="demo-link">
-                    <input type="submit" value="Demo"/>
+                    <input type="submit" value="Guest Log in" style={{fontSize: "16px", fontWeight: "bolder"}}/>
                 </div>
             </form>
         </>
