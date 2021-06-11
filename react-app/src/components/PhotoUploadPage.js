@@ -1,5 +1,14 @@
 // sunday MOCK
 import React, { useState } from "react";
+
+import { useSelector, useDispatch } from "react-redux";
+import { photoUpload } from "../store/posts"  // may change name of this function and store location! curly braces from export const
+import './PhotoUploadPage.css'
+import {useHistory} from 'react-router-dom'
+import { useAlert } from 'react-alert'
+import igPic from "../images/ig-face.jpeg"
+import igPic2 from "../images/igpic2.jpg"
+import background from "../images/watercolor.jpeg"
 import { useDispatch } from "react-redux";
 import { photoUpload } from "../store/posts";  // may change name of this function and store location! curly braces from export const
 import './PhotoUploadPage.css';
@@ -11,19 +20,20 @@ import Footer from "./Footer";
 
 
 function PhotoUploadPage() {
-  let history = useHistory()
+  const dispatch = useDispatch();
+  let history = useHistory();
+  const alert = useAlert();
+  const sessionUser = useSelector(state => state.session.user);
+  const [ caption, setCaption ] = useState("");
+  const [ image, setImage ] = useState(null);
+  const [photoCreated, setPhotoCreated] = useState();
 
-  const [ caption, setCaption ] = useState("")
-  const [ image, setImage ] = useState(null)
-  const [photoCreated, setPhotoCreated] = useState()
-
-  const dispatch = useDispatch()
   const handleSubmit = async (e) => {
     e.preventDefault();
     const submission = { caption, image }
     let createdPhoto = await dispatch(photoUpload(submission)) // line ~42 of session.js data return
-    // return alert('Post Created!')
-    history.push('/')
+    await alert.show('Post Created!')
+    await history.push(`/user/${sessionUser.id}`)
   }
 
   return (
