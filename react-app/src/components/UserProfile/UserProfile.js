@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from 'react-router-dom'
-import { getSingleUser, getSuggested, followAUser } from '../../store/session'
-import './UserProfile.css'
+import { useLocation } from 'react-router-dom';
+import { getSingleUser, getSuggested, followAUser } from '../../store/session';
+import './UserProfile.css';
+import Footer from "../Footer";
 
 function UserProfile(props) {
     const dispatch = useDispatch();
@@ -101,6 +102,7 @@ function UserProfile(props) {
                         ))}
                     </div >
                 </div>
+                <Footer/>
             </>
         );
     }

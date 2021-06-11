@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink} from "react-router-dom";
 import { Modal } from '../../context/Modal';
-import Comments from '../PhotoFeed/Comments'
-import { getAllPosts } from '../../store/posts'
-
+import Comments from '../PhotoFeed/Comments';
+import { getAllPosts } from '../../store/posts';
+import Footer from '../Footer';
 import './ExplorePage.css';
 import '../../context/Modal.css';
 
@@ -109,22 +109,7 @@ const ExplorePage = () => {
                     </div>
                 </Modal>
             )}
-               <footer>
-        <ul className="footer-links">
-          <li><a href="/">About</a></li>
-          <li><a href="/">Blog</a></li>
-          <li><a href="/">Jobs</a></li>
-          <li><a href="/">API</a></li>
-          <li><a href="/">Privacy</a></li>
-          <li><a href="/">Terms</a></li>
-          <li><a href="/">Top Accounts</a></li>
-          <li><a href="/">Hashtags</a></li>
-          <li><a href="/">Locations</a></li>
-        </ul>
-      </footer>
-      <div className="footer-copyright">
-					<h6>© 2021 Overshare from Marc, Savannah, Heba & Mimi</h6>
-	    </div>
+            <Footer/>
         </div>
         </>
     )
