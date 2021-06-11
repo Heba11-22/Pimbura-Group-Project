@@ -97,11 +97,11 @@ const ExplorePage = () => {
                                     )}
                                 </ul>
                             </div>
-                            <div className='icons2'>
+                            {/* <div className='icons2'>
                                 <i className="heart outline icon" style={{fontSize: "17px"}}></i>
                                 <i className="comment outline icon" style={{fontSize: "17px"}}></i>
                                 <i className="paper plane outline icon" style={{fontSize: "17px"}}></i>
-                            </div>
+                            </div> */}
                             <div className="post-comment-div">
                                 <Comments  className="post-comment" post_id={post_id}/>
                             </div>
