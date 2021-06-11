@@ -87,18 +87,15 @@ const LoginForm = () => {
               <a href="https://www.facebook.com"  style={{textDecoration:'none', fontSize:"1.1em", color:"#4267B2"}}><i class="fab fa-facebook-square" area-hidden="true" style={{fontSize: '1.5em'}}></i></a>
               <a href="https://www.facebook.com"  style={{textDecoration:'none', fontSize:"1.1em", color:"#4267B2"}}>  Log in with Facebook</a>
         </div>
-        <div className="forgot">
-          <a href="/">Forgot password?</a>
-        </div>
+          <div className="forgot">
+            <DemoUser />
+          </div>
         </div>
 
         <div className="sign-up-box">
             <h3>
               Don't have an account? <Link to="/sign-up">   Sign up</Link>
             </h3>
-        </div>
-        <div className="demo-log-in">
-          <DemoUser />
         </div>
       </div>
 

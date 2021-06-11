@@ -20,7 +20,7 @@ const NavBar = (props) => {
         </div>
         <div className="navbar-right">
           <li>
-            <NavLink to="/" exact={true} activeClassName="active">
+            <NavLink to="/" exact={true} activeClassName="active" className="upload-nav2">
               <i className="home icon right-list"/>
             </NavLink>
           </li>
@@ -28,12 +28,13 @@ const NavBar = (props) => {
             <NavLink to="/explore" exact={true}>
               <i className="compass outline icon right-list"/>
             </NavLink>
-            <NavLink to="/upload" exact={true} activeClassName="active">
+            <NavLink to="/upload" exact={true} activeClassName="active" className="upload-nav">
               <i className="upload icon right-list"/>
             </NavLink>
-            <NavLink to="/" exact={true} activeClassName="active">
+             {/* If we have chat we will put the icon: */}
+            {/* <NavLink to="/" exact={true} activeClassName="active">
               <i className="comment alternate outline icon right-list"/>
-            </NavLink>
+            </NavLink> */}
           </li>
           <li className="right-list">
             <ProfileButton/>
