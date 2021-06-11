@@ -9,13 +9,6 @@ import { useAlert } from 'react-alert'
 import igPic from "../images/ig-face.jpeg"
 import igPic2 from "../images/igpic2.jpg"
 import background from "../images/watercolor.jpeg"
-import { useDispatch } from "react-redux";
-import { photoUpload } from "../store/posts";  // may change name of this function and store location! curly braces from export const
-import './PhotoUploadPage.css';
-import {useHistory} from 'react-router-dom';
-import igPic from "../images/ig-face.jpeg";
-import igPic2 from "../images/igpic2.jpg";
-import background from "../images/watercolor.jpeg";
 import Footer from "./Footer";
 
 
@@ -37,7 +30,7 @@ function PhotoUploadPage() {
   }
 
   return (
-    <>
+    <div className="upload-div">
       <div className="top-upload-container">
 
         <div className="left-ig">
@@ -141,7 +134,7 @@ function PhotoUploadPage() {
         </form>
       </div>
       <Footer/>
-    </>
+    </div>
   );
 }
 
