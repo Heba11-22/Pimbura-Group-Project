@@ -30,7 +30,6 @@ function PhotoFeed() {
     const handleLike = async (e) => {
         const user_id = userId
         const post_id = postID
-        console.log(user_id, post_id)
         const params = { user_id, post_id }
         dispatch(likeAPost(params))
         
@@ -97,7 +96,6 @@ function PhotoFeed() {
     }
 
     const userOwnsCommentLike = (comment, userId) => {
-        console.log('user owns comment like triggered')
         if (comment.comment_likes.length) {
             for (let i = 0; i < comment.comment_likes.length; i++) {
                 if (comment.comment_likes[i].user_id === userId) {

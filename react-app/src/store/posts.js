@@ -20,7 +20,6 @@ const updatePostLikes = (post) => ({
 })
 
 export const getAllPosts = () => async (dispatch) => {
-    // const response = await fetch('/api/posts')
     const response = await fetch('/api/posts/', {  //not done routes yet
         method: "GET",
     });
@@ -32,7 +31,6 @@ export const getAllPosts = () => async (dispatch) => {
 }
 
 export const getAllUserPosts = (id) => async (dispatch) => {
-    // const response = await fetch('/api/posts')
     const response = await fetch('/api/posts/user/:id', {  //not done routes yet
         method: "GET",
     });
@@ -57,7 +55,6 @@ export const likeAPost = (params) => async dispatch => {
 
 export const likeAComment = (params) => async dispatch => {
     const {user_id, comment_id} = params
-    // console.log("INSIDE LIKEACOMMENT FUNCTION THUNK")
     const response = await fetch(`/api/comments/${comment_id}/like`, {
         method: "POST",
         user_id,
@@ -71,8 +68,6 @@ export const likeAComment = (params) => async dispatch => {
 
 export const unlikeAPost = (params) => async dispatch => {
     const { post_id, like_id } = params
-    
-    console.log('post id from thunk',post_id, like_id)
     const response = await fetch(`/api/posts/like/${post_id}`, {
         method: "DELETE"
         
@@ -129,15 +124,12 @@ export const photoUpload = (submission) => async (dispatch) => {
     if (image) {
         formData.append("image", image)
     }
-    // console.log('BEFORE RESPONSE')
     const response = await fetch('/api/posts/', {  //not done routes yet
         method: "POST",
         body: formData
     });
-    // console.log("------!")
     if (response.ok) {  //202
         const data = await response.json();
-        // console.log('from inside the thunk',data)
         dispatch(createPost(data))
         return 
     }

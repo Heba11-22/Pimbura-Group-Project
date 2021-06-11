@@ -18,7 +18,7 @@ def seed():
     seed_posts()
     seed_comments()
     seed_post_likes()
-    seed_comment_likes()
+    # seed_comment_likes()
     seed_followers()
 
     # Add other seed function

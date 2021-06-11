@@ -24,7 +24,6 @@ export const getSearchResult = (searchField) => async (dispatch) => {
             search: searchField
         })
     })
-    // console.log(response)
     const data = await response.json();
     dispatch(searchUser(data))
 }
