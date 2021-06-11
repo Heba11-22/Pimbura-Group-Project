@@ -2,19 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useHistory } from "react-router-dom";
 import LogoutButton from '../auth/LogoutButton';
-// import picture from './profile.jpg'
-import picture from "../../images/profile.jpg"
-// import { useLocation } from 'react-router-dom'
-// import { getSingleUser } from '../../store/session'
+
 function ProfileButton() {
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user)
-
     const targetUser = useSelector(state => state.session.target_user)
-    // console.log("TARGETUSERRR", targetUser)
-    // const targetUserAvatar = targetUser.avatar_url;
-
-    // console.log("-------", sessionUser)
     const [showMenu, setShowMenu] = useState(false);  // setting the menu showing to false "closed"
 
     // function to open the menu

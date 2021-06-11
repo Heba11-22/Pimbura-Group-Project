@@ -28,8 +28,8 @@ def comment_like(id):
 @comment_routes.route('/<int:id>/unlike/<int:comment_id>', methods=['DELETE'])
 @login_required
 def comment_unlike(id, comment_id):
-    user_id=current_user.id
-    like = CommentLikes.query.filter(CommentLikes.user_id == user_id, CommentLikes.comment_id == comment_id).one()
+    user_id = current_user.id
+    like = CommentLikes.query.filter(CommentLikes.user_id == user_id, CommentLikes.comment_id == comment_id).first()
     db.session.delete(like)
     db.session.commit()
     comment = Comments.query.get(comment_id)

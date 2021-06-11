@@ -23,7 +23,6 @@ export function ModalProvider({ children }) {
         {children}
       </ModalContext.Provider>
       <div ref={modalRef} />
-      {/* {console.log("++++++++++++++++++",modalRef)} */}
     </>
   );
 }

@@ -51,12 +51,10 @@ const ExplorePage = () => {
                 <div className="post-image-div2">
                     {Object.values(allPosts).map((post, i) => (
                             <li  key={i}>
-                            {/* {console.log("++++++++++++++",Object.values(post))} */}
                                 <button className="post-image-button" onClick={onClick} value={post.id}>
                                     <div className="explore-tile">
                                         <img  className="explore-tile" src={post.photo_url} value={post}/>
                                     </div>
-                                    {/* <img  src={post.photo_url} value={post}/> */}
                                 </button>
                             </li>
                     ))}
@@ -73,7 +71,6 @@ const ExplorePage = () => {
                                     <div className="user-follow">
                                         <div className="username-bold">{postUser.username}</div>
                                         <div className="follow"><NavLink to="/follow">Follow</NavLink></div>
-                                        {/* <div className="username-light">{postUser.username}</div> */}
                                     </div>
                                 </NavLink>
                             </div>
@@ -88,12 +85,9 @@ const ExplorePage = () => {
                                 <ul className="comments"> {comments.map((comment,i) =>
                                     <li key={i}>
                                         <div className="comments-list">
-                                            {/* {console.log("++++++++++++++",comment)} */}
                                             <NavLink to={`/user/${comment.user_id}`} className="user-comment-avatar-div">
-                                                {/* <div className="user-comment-avatar-div"> */}
                                                     <div className="user-comment-avatar2"><img className="user-comment-avatar" src={comment.user.avatar_url}/></div>
                                                     <div className="user-comment">{comment.user.username}</div>
-                                                {/* </div> */}
                                             </NavLink>
                                             <div className="comment">
                                                 {comment.comment}
