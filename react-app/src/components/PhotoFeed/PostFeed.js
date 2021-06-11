@@ -5,7 +5,8 @@ import { getAllPosts, likeAPost, unlikeAPost, deleteAComment, likeAComment, unli
 import Comments from './Comments'
 import SuggestedUsers from '../SuggestedUsers/SuggestedUsers'
 import './PhotoFeed.css';
-// import { getAllUsers } from '../../store/session'
+import Footer from '../Footer';
+
 
 function PhotoFeed() {
     const dispatch = useDispatch();
@@ -162,22 +163,7 @@ function PhotoFeed() {
                     <SuggestedUsers />
                 </div>
             </div>
-            <footer>
-                <ul className="footer-links">
-                <li><a href="/">About</a></li>
-                <li><a href="/">Blog</a></li>
-                <li><a href="/">Jobs</a></li>
-                <li><a href="/">API</a></li>
-                <li><a href="/">Privacy</a></li>
-                <li><a href="/">Terms</a></li>
-                <li><a href="/">Top Accounts</a></li>
-                <li><a href="/">Hashtags</a></li>
-                <li><a href="/">Locations</a></li>
-                </ul>
-            </footer>
-            <div className="footer-copyright">
-				<h6>© 2021 Overshare from Marc, Savannah, Heba & Mimi</h6>
-			</div>
+            <Footer/>
         </>
     )
 

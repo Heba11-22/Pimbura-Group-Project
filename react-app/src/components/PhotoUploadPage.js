@@ -1,12 +1,13 @@
 // sunday MOCK
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { photoUpload } from "../store/posts"  // may change name of this function and store location! curly braces from export const
-import './PhotoUploadPage.css'
-import {useHistory} from 'react-router-dom'
-import igPic from "../images/ig-face.jpeg"
-import igPic2 from "../images/igpic2.jpg"
-import background from "../images/watercolor.jpeg"
+import { photoUpload } from "../store/posts";  // may change name of this function and store location! curly braces from export const
+import './PhotoUploadPage.css';
+import {useHistory} from 'react-router-dom';
+import igPic from "../images/ig-face.jpeg";
+import igPic2 from "../images/igpic2.jpg";
+import background from "../images/watercolor.jpeg";
+import Footer from "./Footer";
 
 
 function PhotoUploadPage() {
@@ -129,23 +130,7 @@ function PhotoUploadPage() {
           </div>
         </form>
       </div>
-      <footer>
-        <ul className="footer-links">
-        <li><a href="/">About</a></li>
-        <li><a href="/">Blog</a></li>
-        <li><a href="/">Jobs</a></li>
-        <li><a href="/">API</a></li>
-        <li><a href="/">Privacy</a></li>
-        <li><a href="/">Terms</a></li>
-        <li><a href="/">Top Accounts</a></li>
-        <li><a href="/">Hashtags</a></li>
-        <li><a href="/">Locations</a></li>
-        </ul>
-      </footer>
-      <div className="footer-copyright" >
-				<h6>© 2021 Overshare from Marc, Savannah, Heba & Mimi</h6>
-			</div>
-
+      <Footer/>
     </>
   );
 }

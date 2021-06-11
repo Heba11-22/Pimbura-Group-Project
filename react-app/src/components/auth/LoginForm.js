@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import  { useDispatch, useSelector } from "react-redux";
 import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
-import * as sessionActions from '../../store/session'
 import { Link } from 'react-router-dom';
 import DemoUser from '../auth/DemoUser';
-
-import './login.css'
-import google from "../../images/google-app.png"
-import apple from "../../images/apple-app.png"
-import splash from "../../images/splash.jpeg"
+import './login.css';
+import google from "../../images/google-app.png";
+import apple from "../../images/apple-app.png";
+import splash from "../../images/splash.jpeg";
+import Footer from "../Footer";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -124,24 +123,7 @@ const LoginForm = () => {
           </span>
         </div>
       </div>
-
-      <footer>
-        <ul className="footer-links">
-          <li><a href="/">About</a></li>
-          <li><a href="/">Blog</a></li>
-          <li><a href="/">Jobs</a></li>
-          <li><a href="/">API</a></li>
-          <li><a href="/">Privacy</a></li>
-          <li><a href="/">Terms</a></li>
-          <li><a href="/">Top Accounts</a></li>
-          <li><a href="/">Hashtags</a></li>
-          <li><a href="/">Locations</a></li>
-        </ul>
-      </footer>
-
-      <div className="footer-copyright">
-					<h6>© 2021 Overshare from Marc, Savannah, Heba & Mimi</h6>
-			</div>
+      <Footer/>
 
     </>
 

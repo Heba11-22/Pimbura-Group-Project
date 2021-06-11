@@ -83,7 +83,7 @@
 .forgot{
      text-align: center;
  }
-footer {
+/* footer {
     display: flex;
     flex-direction: column;
 }
@@ -93,19 +93,8 @@ footer {
     justify-content: space-evenly;
     margin-bottom: 2rem;
 
-}
-.footer-links a{
-    color: grey;
-    font-size: 12px;
-}
-.footer-copyright h6{
-    color: grey;
-    font-size: 12px;
-    text-align: center;
-    font-weight: 200;
-    font-family: -apple-system,BlinkMacSystemFont,“Segoe UI”,Roboto,Helvetica,Arial,sans-serif;
-    padding-bottom: 40px;
-}
+} */
+
 .demo-link input{
     border: none;
     background: none;
