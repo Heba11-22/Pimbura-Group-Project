@@ -1,4 +1,4 @@
-# Welcome to [OverShare](https://pimbura-clone.herokuapp.com/)!
+# Welcome to [OverShare](https://overshare.herokuapp.com/)!
 ### OverShare is a clone of instagram.
 
 ## Features
